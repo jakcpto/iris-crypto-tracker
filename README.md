@@ -31,4 +31,4 @@ Reply on request body:
 ## Framework
 
 We used PEX framework to develop Services which sends requests.
-And we used PEX to develop Operations, which sends emails with processed information.
+Also we used PEX to develop Operations, which sends emails with processed information.
