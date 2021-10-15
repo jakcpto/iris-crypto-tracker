@@ -13,14 +13,14 @@ Open the terminal in this directory and run:
 ```
 $ docker-compose up -d
 ```
-and open then [http://localhost:32792/csp/user/EnsPortal.ProductionConfig.zen]
+and open then http://localhost:32792/csp/user/EnsPortal.ProductionConfig.zen(http://localhost:32792/csp/user/EnsPortal.ProductionConfig.zen)
 
 ## Usage
 
-At the Main page you should Start Production http://localhost:32792/csp/user/EnsPortal.ProductionConfig.zen
+At the Main page you should Start Production http://localhost:32792/csp/user/EnsPortal.ProductionConfig.zen(http://localhost:32792/csp/user/EnsPortal.ProductionConfig.zen)
 ![image (64)](https://user-images.githubusercontent.com/41373877/137479173-9d6c17ec-d0c0-467a-95d3-f0baa137875a.png)
 
-In the Message Viewer [http://localhost:32792/csp/user/EnsPortal.MessageViewer.zen?SOURCEORTARGET=CryptoService] shown every completed request and results.
+In the Message Viewer http://localhost:32792/csp/user/EnsPortal.MessageViewer.zen?SOURCEORTARGET=CryptoService(http://localhost:32792/csp/user/EnsPortal.MessageViewer.zen?SOURCEORTARGET=CryptoService) shown every completed request and results.
 ![image (65)](https://user-images.githubusercontent.com/41373877/137479394-f4f53d9d-9d95-436d-b992-67407301f393.png)
 
 CryptoService sends request to api.coinpaprika.com every minute to gain actual data about crypto currences.
