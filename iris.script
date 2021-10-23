@@ -1,6 +1,6 @@
  Do $SYSTEM.OBJ.Load("/opt/irisapp/Installer.cls", "ck")
  Set sc = ##class(App.Installer).setup() 
- Set production = "dc.CryptoProduction"
+ Set production = "Crypto.CryptoProduction"
  Set ^Ens.Configuration("csp","LastProduction") = production
  Do ##class(Ens.Director).SetAutoStart(production)
 
