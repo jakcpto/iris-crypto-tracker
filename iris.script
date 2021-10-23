@@ -1,7 +1,5 @@
  Do $SYSTEM.OBJ.Load("/opt/irisapp/Installer.cls", "ck")
- Set sc = ##class(App.Installer).setup() 
- Set production = "Crypto.CryptoProduction"
- Set ^Ens.Configuration("csp","LastProduction") = production
+ Set sc = ##class(App.Installer).setup()
  Do ##class(Ens.Director).SetAutoStart(production)
 
  ZNspace "IRISAPP"
