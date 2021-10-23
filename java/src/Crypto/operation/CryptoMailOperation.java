@@ -14,7 +14,6 @@ public class CryptoMailOperation extends BusinessOperation {
 
     private final static String username = "v.berkutov@teccod.ru";
     private final static String password = "xfmpiwohnmokwetw";
-    private final static String sendTo = "v.berkutovv@gmail.com";
 
     private static Session session;
 
