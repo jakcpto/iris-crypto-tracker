@@ -13,10 +13,8 @@
       </Dependencies>
       <SourcesRoot>iris/src</SourcesRoot>
       <Resource Name="Ens.Config.DefaultSettings.ESD"/>
-      <Resource Name="TestLookupTable.LUT"/>
       <Resource Name="Crypto.PKG"/>
       <Resource Name="Crypto.CLS"/>
-      <SourcesRoot>iris/src</SourcesRoot>
       <FileCopy Name="lib/" Target="${libdir}jgw/lib/"/>
       <SystemRequirements Version=">=2020.1" Interoperability="enabled" />
     </Module>
