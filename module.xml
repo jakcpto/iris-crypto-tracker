@@ -11,11 +11,9 @@
           <Version>1.0.1</Version>
         </ModuleReference>
       </Dependencies>
-      <SourcesRoot>iris/src</SourcesRoot>
-      <Resource Name="Ens.Config.DefaultSettings.ESD"/>
-      <Resource Name="Crypto.PKG"/>
-      <Resource Name="Crypto.CLS"/>
-      <FileCopy Name="lib/" Target="${libdir}jgw/lib/"/>
+      <SourcesRoot>iris</SourcesRoot>
+      <Resource Name="src.Crypto.PKG"/>
+      <FileCopy Name="java/src/lib/" Target="${libdir}jgw/"/>
       <SystemRequirements Version=">=2020.1" Interoperability="enabled" />
     </Module>
   </Document>
