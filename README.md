@@ -57,6 +57,9 @@ Telegram Bot message example:
 Email message example:
 ![image](https://user-images.githubusercontent.com/41373877/138560370-9df9c331-1dcc-47c8-a5f0-bcfac6788355.png)
 
+CSV file example:
+![image](https://user-images.githubusercontent.com/47400570/138618731-d985c9ab-3b5d-4ea6-aa0b-8c282dd50430.png)
+
 
 # Framework
 We used PEX framework to develop Services which sends requests.
