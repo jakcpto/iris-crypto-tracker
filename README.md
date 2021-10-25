@@ -42,8 +42,7 @@ Bot commands:
 
 
 # Description
-![image](https://user-images.githubusercontent.com/41373877/138560208-1508b167-4e75-4a8d-b67e-7a13aa1a1fdf.png)
-
+![image](https://user-images.githubusercontent.com/47400570/138618556-c5bf8e15-a795-40a8-8da6-2dcec184be50.png)
 
 
 # Online Examples
