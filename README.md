@@ -31,7 +31,7 @@ In the Message Viewer http://localhost:32792/csp/user/EnsPortal.MessageViewer.ze
 CryptoService sends request to api.coinpaprika.com every minute to gain actual data about crypto currences.
 
 Reply on request body:
-![image (66)](https://user-images.githubusercontent.com/41373877/137479523-0bb61993-524a-4bc1-a123-921a0bade5c5.png)
+![image](https://user-images.githubusercontent.com/47400570/138618664-e6a77cb1-49e8-46b3-93b8-3bb71052a239.png)
 
 Emails sent to email from the Business Rules.
 
