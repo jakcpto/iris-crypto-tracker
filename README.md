@@ -17,7 +17,7 @@ and open then http://localhost:32792/csp/user/EnsPortal.ProductionConfig.zen
 
 ## Setup
 In the Business Rules you should write email where to send alerts about changes.
-![image](https://user-images.githubusercontent.com/41373877/138560188-0bc9007f-1c50-419b-b4c1-e748948d69c4.png)
+![image](https://user-images.githubusercontent.com/41373877/138619522-95831ad7-e5f8-4ea7-83ab-cc2fae7d3504.png)
 
 User can subscribe to Telegram bot @iris_crypto_tracker_bot to recieve alerts.
 
