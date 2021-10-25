@@ -13,6 +13,7 @@ XData RuleDefinition [ XMLNamespace = "http://www.intersystems.com/rule" ]
 <assign property="Document.ToEmailAddress" value="&quot;youremail@index.com&quot;"></assign>
 <send transform="" target="TelegramBotOperation"></send>
 <send transform="" target="MailOperation"></send>
+<send transform="" target="CsvOperation"></send>
 <return></return>
 </ruleSet>
 </ruleDefinition>

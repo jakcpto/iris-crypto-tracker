@@ -9,8 +9,6 @@ XData ProductionDefinition
   <Item Name="CryptoService" Category="" ClassName="EnsLib.PEX.BusinessService" PoolSize="1" Enabled="true" Foreground="false" Comment="" LogTraceEvents="true" Schedule="">
     <Setting Target="Host" Name="%gatewayPort">55555</Setting>
     <Setting Target="Host" Name="%remoteClassname">Crypto.service.CryptoService</Setting>
-    <Setting Target="Host" Name="%gatewayExtraClasspaths"></Setting>
-    <Setting Target="Host" Name="%remoteSettings"></Setting>
     <Setting Target="Host" Name="%gatewayHost">jgw</Setting>
     <Setting Target="Adapter" Name="CallInterval">60</Setting>
   </Item>
@@ -20,15 +18,16 @@ XData ProductionDefinition
   <Item Name="TelegramBotOperation" Category="" ClassName="EnsLib.PEX.BusinessOperation" PoolSize="1" Enabled="true" Foreground="false" Comment="" LogTraceEvents="true" Schedule="">
     <Setting Target="Host" Name="%gatewayPort">55555</Setting>
     <Setting Target="Host" Name="%remoteClassname">Crypto.operation.TelegramBotOperation</Setting>
-    <Setting Target="Host" Name="%gatewayExtraClasspaths"></Setting>
-    <Setting Target="Host" Name="%remoteSettings"></Setting>
     <Setting Target="Host" Name="%gatewayHost">jgw</Setting>
   </Item>
   <Item Name="MailOperation" Category="" ClassName="EnsLib.PEX.BusinessOperation" PoolSize="1" Enabled="true" Foreground="false" Comment="" LogTraceEvents="true" Schedule="">
     <Setting Target="Host" Name="%gatewayPort">55555</Setting>
     <Setting Target="Host" Name="%remoteClassname">Crypto.operation.CryptoMailOperation</Setting>
-    <Setting Target="Host" Name="%gatewayExtraClasspaths"></Setting>
-    <Setting Target="Host" Name="%remoteSettings"></Setting>
+    <Setting Target="Host" Name="%gatewayHost">jgw</Setting>
+  </Item>
+  <Item Name="CsvOperation" Category="" ClassName="EnsLib.PEX.BusinessOperation" PoolSize="1" Enabled="true" Foreground="false" Comment="" LogTraceEvents="true" Schedule="">
+    <Setting Target="Host" Name="%gatewayPort">55555</Setting>
+    <Setting Target="Host" Name="%remoteClassname">Crypto.operation.CryptoCsvOperation</Setting>
     <Setting Target="Host" Name="%gatewayHost">jgw</Setting>
   </Item>
 </Production>
