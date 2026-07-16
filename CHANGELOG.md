@@ -9,6 +9,7 @@ All notable changes to this project are documented in this file.
 - Runtime PEX setup via `pex-runtime.script` and `docker-iris-start.sh` on IRIS container start
 - Telegram bot credentials via `.env` (`TELEGRAM_BOT_TOKEN`, `TELEGRAM_BOT_USERNAME`)
 - `.env.example` template for local configuration
+- Published Docker images on Docker Hub: `jackpto/iris-crypto-tracker-iris` and `jackpto/iris-crypto-tracker-jgw` (tags `1.2.0`, `latest`)
 
 ### Changed
 - Java Gateway runtime upgraded from Java 8 to Temurin **11** (Cloudflare/CoinPaprika TLS compatibility)

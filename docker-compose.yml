@@ -1,5 +1,6 @@
 services:
   iris:
+    image: jackpto/iris-crypto-tracker-iris:1.2.0
     build: 
       context: .
       dockerfile: Dockerfile
@@ -16,7 +17,7 @@ services:
       - ./:/irisdev/app
 
   jgw:
-    image: iris-crypto-tracker-jgw:latest
+    image: jackpto/iris-crypto-tracker-jgw:1.2.0
     build:
       context: java
       dockerfile: Dockerfile
