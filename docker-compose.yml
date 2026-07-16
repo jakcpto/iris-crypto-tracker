@@ -1,6 +1,10 @@
+# Default: local image names + build (docker compose up --build).
+# To pull pre-built images from Docker Hub instead, use jackpto/ prefix, e.g.:
+#   image: jackpto/iris-crypto-tracker-iris:1.2.0
+#   image: jackpto/iris-crypto-tracker-jgw:1.2.0
 services:
   iris:
-    image: jackpto/iris-crypto-tracker-iris:1.2.0
+    image: iris-crypto-tracker-iris:latest
     build: 
       context: .
       dockerfile: Dockerfile
@@ -17,7 +21,7 @@ services:
       - ./:/irisdev/app
 
   jgw:
-    image: jackpto/iris-crypto-tracker-jgw:1.2.0
+    image: iris-crypto-tracker-jgw:latest
     build:
       context: java
       dockerfile: Dockerfile
