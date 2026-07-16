@@ -1,10 +1,13 @@
-version: '3.6'
 services:
   iris:
     build: 
       context: .
       dockerfile: Dockerfile
+    hostname: iris
     restart: always
+    depends_on:
+      jgw:
+        condition: service_started
     ports: 
       - 1972
       - 32792:52773
@@ -13,10 +16,12 @@ services:
       - ./:/irisdev/app
 
   jgw:
-    image: intersystemsdc/pexoperation:latest
+    image: iris-crypto-tracker-jgw:latest
     build:
       context: java
       dockerfile: Dockerfile
+    env_file:
+      - .env
     restart: always
     ports: 
       - 55555:55555

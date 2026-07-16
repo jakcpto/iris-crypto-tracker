@@ -4,9 +4,9 @@ Class App.Installer
 XData setup [ XMLNamespace = INSTALLER ]
 {
 <Manifest>
-  <Default Name="NAMESPACE" Value="INTEROP"/>
-  <Default Name="DBNAME" Value="INTEROP"/>
-  <Default Name="APPPATH" Dir="/opt/app/" />
+  <Default Name="NAMESPACE" Value="IRISAPP"/>
+  <Default Name="DBNAME" Value="IRISAPP"/>
+  <Default Name="APPPATH" Dir="/opt/irisapp/" />
   <Default Name="SOURCESPATH" Dir="${APPPATH}src" />
   <Default Name="RESOURCE" Value="%DB_${DBNAME}" /> 
 

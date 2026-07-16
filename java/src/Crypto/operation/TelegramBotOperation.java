@@ -34,6 +34,10 @@ public class TelegramBotOperation extends BusinessOperation {
     }
 
     @Override
+    public void OnTearDown() throws Exception {
+    }
+
+    @Override
     public Object OnMessage(Object request) throws Exception {
         
         RequestModel requestModel = new RequestModel(request);
@@ -46,7 +50,7 @@ public class TelegramBotOperation extends BusinessOperation {
         
         bot.sendMessageToSubscribers(message);
 
-        return super.OnMessage(request);
+        return null;
     }
     
 }

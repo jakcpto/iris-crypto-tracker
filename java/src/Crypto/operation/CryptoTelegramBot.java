@@ -13,6 +13,14 @@ import java.sql.*;
 
 public class CryptoTelegramBot extends TelegramLongPollingBot {
 
+    private static String requireEnv(String name) {
+        String value = System.getenv(name);
+        if (value == null || value.trim().isEmpty()) {
+            throw new IllegalStateException(name + " is not set");
+        }
+        return value.trim();
+    }
+
     private final Statement statement;
 
     public CryptoTelegramBot() throws SQLException {
@@ -23,12 +31,12 @@ public class CryptoTelegramBot extends TelegramLongPollingBot {
 
     @Override
     public String getBotUsername() {
-        return "iris_crypto_tracker_bot";
+        return requireEnv("TELEGRAM_BOT_USERNAME");
     }
 
     @Override
     public String getBotToken() {
-        return "2080795819:AAEj_TRoI7KPu6RvKZDoIlB4g_sCWIRczok";
+        return requireEnv("TELEGRAM_BOT_TOKEN");
     }
 
     @Override

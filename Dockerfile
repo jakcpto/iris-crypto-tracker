@@ -13,8 +13,16 @@ USER ${ISC_PACKAGE_MGRUSER}
 
 # copy files
 COPY  module.xml .
+COPY Installer.cls .
+COPY App.PEXSetup.cls .
+COPY pex-runtime.script .
+COPY docker-iris-start.sh /usr/local/bin/docker-iris-start.sh
 COPY iris/src src
 COPY iris.script /tmp/iris.script
+
+USER root
+RUN chmod +x /usr/local/bin/docker-iris-start.sh
+USER ${ISC_PACKAGE_MGRUSER}
 
 
 # special extract treatment for hate-speech dataset
@@ -25,3 +33,5 @@ COPY iris.script /tmp/iris.script
 RUN iris start IRIS \
 	&& iris session IRIS < /tmp/iris.script \
     && iris stop IRIS quietly
+
+ENTRYPOINT ["/usr/local/bin/docker-iris-start.sh"]

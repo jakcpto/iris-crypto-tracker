@@ -3,7 +3,7 @@
   <Document name="iris-crypto-tracker.ZPM">
     <Module>
       <Name>iris-crypto-tracker</Name>
-      <Version>1.1.0</Version>
+      <Version>1.2.0</Version>
       <Packaging>module</Packaging>
       <SourcesRoot>iris</SourcesRoot>
       <Resource Name="src.Crypto.PKG"/>

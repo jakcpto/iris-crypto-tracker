@@ -1,11 +1,12 @@
  Do $SYSTEM.OBJ.Load("/opt/irisapp/Installer.cls", "ck")
  Set sc = ##class(App.Installer).setup()
- Do ##class(Ens.Director).SetAutoStart(production)
 
- ZNspace "IRISAPP"
- Do $SYSTEM.OBJ.LoadDir("/opt/irisapp/src","ck",,1)
+ ZN "IRISAPP"
+ Do $SYSTEM.OBJ.Load("/opt/irisapp/App.PEXSetup.cls", "ck")
+ Set sc = ##class(App.PEXSetup).ConfigureAtBuild()
+ Do ##class(Ens.Director).SetAutoStart("Crypto.CryptoProduction")
 
- ZNspace "%SYS"
+ ZN "%SYS"
  Do ##class(Security.Users).UnExpireUserPasswords("*")
 
 halt

@@ -32,8 +32,10 @@ public class CryptoMailOperation extends BusinessOperation {
                 return new PasswordAuthentication(username, password);
             }
         });
+    }
 
-        super.OnInit();
+    @Override
+    public void OnTearDown() throws Exception {
     }
 
     @Override
@@ -49,7 +51,7 @@ public class CryptoMailOperation extends BusinessOperation {
 
         sendMail("Cryptocoin info", message, requestModel.getSendTo());
 
-        return super.OnMessage(request);
+        return null;
     }
 
     void sendMail(String title, String textMessage, String sendTo) throws Exception {

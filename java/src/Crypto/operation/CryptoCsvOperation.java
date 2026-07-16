@@ -21,11 +21,14 @@ public class CryptoCsvOperation extends BusinessOperation {
         if(!new File(path).exists()){
             writer = new CSVWriter(new FileWriter(path, true));
             writer.writeNext(new String[]{"date", "price", "Change_1h", "Change_24h", "Change_30d"});
+            writer.flush();
         }else {
             writer = new CSVWriter(new FileWriter(path, true));
         }
+    }
 
-        super.OnInit();
+    @Override
+    public void OnTearDown() throws Exception {
     }
 
     @Override
@@ -43,6 +46,6 @@ public class CryptoCsvOperation extends BusinessOperation {
 
         writer.flush();
 
-        return super.OnMessage(request);
+        return null;
     }
 }

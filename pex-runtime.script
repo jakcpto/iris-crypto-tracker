@@ -1,0 +1,9 @@
+ZN "IRISAPP"
+Do $SYSTEM.OBJ.Load("/opt/irisapp/App.PEXSetup.cls", "ck")
+Set sc = ##class(App.PEXSetup).Setup()
+Write "PEX setup status: ", $System.Status.GetErrorText(sc), !
+If '$System.Status.IsOK(sc) Halt 1
+Do ##class(Ens.Director).StopProduction()
+Set sc = ##class(Ens.Director).StartProduction("Crypto.CryptoProduction")
+Write "Production restart status: ", $System.Status.GetErrorText(sc), !
+halt

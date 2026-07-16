@@ -4,13 +4,13 @@ import com.intersystems.enslib.pex.*;
 import com.intersystems.jdbc.IRISObject;
 import com.intersystems.jdbc.IRIS;
 import com.intersystems.gateway.GatewayContext;
-import java.util.Properties;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.*;
 import java.io.IOException;
+import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 
@@ -22,6 +22,10 @@ public class CryptoService extends BusinessService{
     @Override
     public void OnInit() throws Exception, ClassNotFoundException {
         iris = GatewayContext.getIRIS();
+    }
+
+    @Override
+    public void OnTearDown() throws Exception {
     }
 
     @Override
@@ -44,7 +48,7 @@ public class CryptoService extends BusinessService{
         requestMessage.set("Request", requestData);
 
         SendRequestAsync("RequestRoutingRule", requestMessage);
-        return super.OnProcessInput(messageInput);
+        return null;
     }
 
     private String readAll(Reader rd) throws IOException {
@@ -57,10 +61,28 @@ public class CryptoService extends BusinessService{
     }
 
     public JSONObject readJsonFromUrl(String url) throws IOException, JSONException {
-        try (InputStream is = new URL(url).openStream()) {
-            BufferedReader rd = new BufferedReader(new InputStreamReader(is, StandardCharsets.UTF_8));
+        HttpURLConnection conn = (HttpURLConnection) new URL(url).openConnection();
+        conn.setRequestMethod("GET");
+        conn.setRequestProperty("User-Agent", "iris-crypto-tracker/1.0");
+        conn.setRequestProperty("Accept", "application/json");
+        conn.setConnectTimeout(15000);
+        conn.setReadTimeout(15000);
+
+        int status = conn.getResponseCode();
+        InputStream stream = status >= 200 && status < 300 ? conn.getInputStream() : conn.getErrorStream();
+        if (stream == null) {
+            throw new IOException("HTTP " + status + " with empty body from " + url);
+        }
+
+        try (InputStream is = stream;
+             BufferedReader rd = new BufferedReader(new InputStreamReader(is, StandardCharsets.UTF_8))) {
             String jsonText = readAll(rd);
+            if (status < 200 || status >= 300) {
+                throw new IOException("HTTP " + status + " from " + url + ": " + jsonText);
+            }
             return new JSONObject(jsonText);
+        } finally {
+            conn.disconnect();
         }
     }
 }
